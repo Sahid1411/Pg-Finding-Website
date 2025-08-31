@@ -1,0 +1,116 @@
+.hover-icon{
+    background-color: rgb(191, 206, 202);
+}
+.hover-icon:hover{
+    background-color: #c8b3b3;
+}
+
+.hero-height {
+    width: 102%;
+    overflow: hidden;
+  }
+  
+.hero-font{
+    font-size: 18px;
+}  
+.hero-image{
+    height: 70vh;
+    width: 100%;
+}
+
+.hero-heading{
+    font-size: 40px;
+}
+
+.hero-button{
+    width: 20%;
+    height: 40px;
+}
+
+.hero-chevron-right-btn{
+    height: 50px;
+    width: 50px;
+}
+
+.custom-chevron-right-icon{
+    height: 45px;
+}
+
+.hero-custom-chevron{
+    margin-left: 8px;
+}
+
+
+/* for mobile  */
+@media screen and (max-width: 425px) {  
+    .hero-height {
+        height: 94vh;
+        width: 108%; /* was 103.5% — change to 100% */
+      }
+    .hero-font{
+        font-size: 12px;
+    }
+    .hero-image{
+        height: 40vh;
+        width: 100%;
+    }
+    .hero-heading{
+        font-size: 25px;
+    }
+    .hero-button{
+        width: 40%;
+        height: 35px;
+    }
+
+    .hero-chevron-right-btn{
+        height: 40px;
+        width: 40px;
+    }
+
+    .custom-chevron-right-icon{
+        height: 35px;
+    }
+
+    .hero-custom-chevron{
+        margin-left: 8px;
+    }
+
+}
+
+/* for tablet  */
+@media screen and (min-width: 425px) and (max-width: 768px) { 
+    .hero-height {
+        height: 50vh;
+        width: 103.5%; /* was 101.5% — change to 100% */
+      }
+    .hero-image{
+        height: 50vh;
+        width: 100%;
+    } 
+    .hero-font{
+        font-size: 14px;
+    }
+    
+    .hero-heading{
+        font-size: 27px;
+    }
+
+    .hero-button{
+        width: 30%;
+        height: 35px;
+    }
+
+    .hero-chevron-right-btn{
+        height: 40px;
+        width: 40px;
+    }
+
+    .custom-chevron-right-icon{
+        height: 18px;
+    }
+
+    .hero-custom-chevron{
+        margin-left: 2px;
+    }
+}
+

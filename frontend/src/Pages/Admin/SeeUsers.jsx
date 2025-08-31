@@ -1,0 +1,121 @@
+import React, { useEffect, useState } from 'react'
+import Header from '../../Components/Header/Header';
+import Navbar from '../../Components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
+import axios from "axios";
+import toast from "react-hot-toast";    
+
+const SeeUsers = () => {
+    const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/api/users");
+        setUsers(response.data);
+      } catch (error) {
+        console.log("Error while fetching data", error);  
+      }
+    };
+    fetchData();
+  }, []);
+
+  const deleteUser = async (userId) => {
+    await axios
+      .delete(`http://localhost:4000/api/delete/user/${userId}`)
+      .then((response) => {
+        setUsers((prevUsers) =>
+          prevUsers.filter((user) => user._id !== userId)
+        );
+        toast.success(response.data.message, { position: "top-right" });
+      })
+      .catch((error) => {
+        console.log(error);
+      }); 
+  };
+
+  const adminId = localStorage.getItem("adminId")?.replace(/"/g, "");
+
+
+  return (
+    <>
+      <div id="hideHeaderNavbar">
+        <Header />
+        <Navbar />
+      </div>
+
+      <div className="container supplier-container">
+        <div className="row">
+          <div className="col-12">
+            <div className="supplier-card">
+              <Link
+                style={{ marginTop: "20px" }}
+                className="btn btn-secondary back-button"
+                to={`/admin-panel/${adminId}`}
+              >
+                <i
+                  style={{ marginRight: "4px" }}
+                  className="fa-solid fa-backward"
+                ></i>
+                Back
+              </Link>
+              <h3 className="text-center">Registered Users</h3>
+              {users.length === 0 ? (
+                <div className="noData">
+                  <h3>No Data to display</h3>
+                  <p>Please add new Users</p>
+                </div>
+              ) : ( 
+                <table className="table table-bordered supplier-table">
+                  <thead>
+                    <tr>
+                      <th>S.No.</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Gender</th>
+                      <th>Phone</th>
+                      <th>Address</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* <tr> */}
+                    {users.map((user, index) => (
+                        <tr key={user._id}> 
+                        <td>{index + 1}</td> 
+                        <td>{user.name}</td>
+                        <td>{user.email} </td>
+                        <td>{user.gender}  </td>
+                        <td>{user.phone} </td>
+                        <td>{user.address} </td> 
+                        {/* <td>1</td>
+                        <td>Sahid Ahmed</td>
+                        <td>sahid@gmail.com</td>
+                        <td> male</td>
+                        <td>5566</td>
+                        <td> "Dibrugahr"</td> */}
+                        <td>
+                          <button
+                            onClick={() => deleteUser(user._id)}
+                            className="btn btn-danger action-button"
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                          {/* <button  className="btn btn-danger action-button">
+                            <i className="fa-solid fa-trash"></i>
+                          </button> */}
+                        </td>
+                      </tr>
+                     ))} 
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default SeeUsers

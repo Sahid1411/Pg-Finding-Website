@@ -1,0 +1,22 @@
+.footer-font{
+    font-size: 20px;
+}
+
+.custom-footer a{
+    text-decoration: none;
+    color: black;
+}
+
+/* for mobile  */
+@media screen and (max-width: 425px) { 
+    .footer-font{
+        font-size: 12px;
+    }
+}
+
+/* for tablet  */
+@media screen and (min-width: 425px) and (max-width: 768px) { 
+    .footer-font{
+        font-size: 14px;
+    }
+ }

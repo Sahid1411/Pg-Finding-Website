@@ -1,0 +1,129 @@
+.nav-hover{
+    color: #291e1e;
+    font-size: 20px;
+}
+.nav-hover:hover{
+    color: blue;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+  
+  .dropdown-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+    display: block;
+    /* transition: background 0.2s; */
+  }
+  
+  .dropdown-menu a:hover {
+    background: #f0f0f0;
+  }
+   
+  #navbar-width{
+    width: 101%;
+  }
+
+  @media screen and (max-width: 425px) { 
+    .nav-hover {
+      font-size: 13px;
+    }
+  
+    .nav-custom-margin {
+      margin-left: 150px;
+    }
+  
+    .navbar-width {
+      width: 105%;
+    }
+  
+    .hide-navbar {
+      display: none !important;
+    }
+  } 
+  
+
+/* for tablet  */
+@media screen and (min-width: 425px) and (max-width: 768px) { 
+  .nav-custom-margin{
+    margin-left: 50px;
+    margin-top: 7px;
+  }
+
+  #navbar-width{
+    width: 102%;
+  }
+
+}
+
+  @media (min-width: 991px) {
+    .nav-custom-margin{
+      margin-left: 50px;
+      margin-top: 7px;
+    }
+    
+    /* #navbar-width{
+      width: 100%;
+    } */
+  }
+
+
+/* dropdown css new  */
+
+/* Hide the dropdown menu by default */
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px); /* Optional animation */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Optional animation */
+}
+
+/* Ensure dropdown is properly positioned */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Below the button */
+  left: 0;
+  z-index: 1000;
+}
+
+
+/* responsive header  */
+@media  (max-width:530px) {
+  .responsive-btn{
+    margin: 12px;
+  }
+}
+
+@media  (max-width:768px) and (min-width:992px){
+  #responsive-name{
+    font-size: 15px;
+  }
+
+}
+
+  

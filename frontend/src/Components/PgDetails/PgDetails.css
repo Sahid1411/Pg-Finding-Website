@@ -1,0 +1,40 @@
+.pgDetails-pg-height{
+    height: 340px;
+    width: 100%;
+}
+
+.pgDetailBox-height{
+    height: 450px;
+}
+
+/* for mobile  */
+@media screen and (min-width: 320px) and (max-width: 720px){ 
+    .pgDetails-pg-height{
+        height: 270px;
+        width: 100%;
+    }
+
+    .pgDetailBox-height{
+        height: 400px; 
+    }  
+
+    .pg-box-width{
+        width: 110%;
+    }
+}
+
+/* for tablet */
+/* for tablet  */
+@media screen and (min-width: 720px) and (max-width: 900px) { 
+    
+    .pgDetails-pg-height{
+        height: 370px;
+        width: 100%;
+    }
+    
+    .pgDetailBox-height{
+        height: 500px;
+    }
+
+    
+}

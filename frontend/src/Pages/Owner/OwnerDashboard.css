@@ -1,0 +1,117 @@
+.custom-calendar {
+    background-color: #bba0da !important; /* Override default background */
+    border-radius: 8px; /* Optional for rounded corners */
+    padding: 10px;
+  }
+  
+  .custom-calendar .react-calendar__tile {
+    /* background-color: #715a5a !important; Ensure tiles match */
+    color: white; /* Improve text visibility */
+  }
+  
+
+
+  /* AdminDashboard.css */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #007bff; /* Change this if needed */
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 15px;
+  }
+  
+
+.close-btn {
+  background: red;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.custom-height-admin-1{
+  height: 230px;
+}
+.custom-height-admin-2{
+  height: 230px;
+}
+
+.admin_card-font{
+  font-size: 20px;
+}
+
+.admin-svg-font{
+  font-size: 50px;
+}
+
+/* for mobile  */
+@media screen and (max-width: 425px) {
+  .custom-height-admin-1{
+    height: 310px;
+  }
+
+  .custom-height-admin-2{
+    height: 350px;
+  }
+
+  .admin_card-font{
+    font-size: 15px;
+  }
+
+  .admin-svg-font{
+    font-size: 30px;
+  }
+  
+}
+
+
+/* responsive design with hamburger  */
+/* Sidebar Toggle Button (Small Screens) */
+.menu-btn {
+  top: 5px;
+  left: 10px;  
+  z-index: 1000;
+  background-color: white;
+}
+
+/* Sidebar Drawer */
+.sidebar-drawer {
+  width: 250px;
+  padding: 10px;
+}
+
+/* Close Button Inside Sidebar */
+.close-btn {
+  float: right;
+}
+
+/* Sidebar Container (Always Visible on Large Screens) */
+.sidebar-container {
+  background-color: #007bff; /* Bootstrap primary color */
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 720px) {
+  .menu-btn {
+      width: 20%;
+  }
+}
+
+
+/* Ensure sidebar has same color in small screens */
+.sidebar-drawer {
+  width: 250px;
+  padding: 10px;
+  background-color: #007bff !important; /* Match large screen sidebar */
+  height: 100vh; /* Ensure full height */
+  color: white; /* Ensure text remains visible */
+}

@@ -1,0 +1,22 @@
+ .map-height{
+    height: 450px;
+ }  
+ .map-width{
+    width: 100%;
+ }
+
+/* for mobile  */
+@media screen and (max-width: 425px) { 
+    .map-height{
+        height: 300px;
+     } 
+     .map-width{
+        width: 105%;
+     }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .map-height{
+        height: 350px;
+     }
+}

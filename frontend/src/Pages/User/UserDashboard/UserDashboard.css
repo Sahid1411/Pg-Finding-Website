@@ -1,0 +1,87 @@
+
+/* responsive design with hamburger  */
+/* Sidebar Toggle Button (Small Screens) */
+.menu-btn {
+    top: 5px;
+    left: 10px;  
+    z-index: 1000;
+    /* background-color: white; */
+  }
+    
+  /* Sidebar Drawer */
+  .sidebar-drawer {
+    width: 250px;
+    padding: 10px;
+  }
+  
+  /* Close Button Inside Sidebar */
+  .close-btn {
+    float: right;
+  }
+  
+  /* Sidebar Container (Always Visible on Large Screens) */
+  .sidebar-container {
+    background-color: #007bff; /* Bootstrap primary color */
+    padding: 10px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 720px) {
+    .menu-btn {
+        width: 20%;
+    }
+  }
+  
+  
+  /* Ensure sidebar has same color in small screens */
+  .sidebar-drawer {
+    width: 250px;
+    padding: 10px;
+    background-color: #007bff !important; /* Match large screen sidebar */
+    height: 100vh; /* Ensure full height */
+    color: white; /* Ensure text remains visible */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;  */
+  }
+
+  /* Close Button Styling */
+  .close-btn {
+    position: absolute; /* Position it relative to sidebar */
+    right: 10px; /* Move to the right */
+    top: 10px; /* Move to the top */
+    color: white; /* Make it visible */
+    z-index: 10; /* Ensure it stays above content */ 
+  }
+
+
+  /* for laptop  */
+  .user-data-custom{
+    font-size: 18px; 
+    width: 70%;
+  }
+  
+  /* for mobile  */
+@media screen and (max-width: 425px) { 
+  .user-data-custom{
+    font-size: 10px; 
+    width: 90%;
+  }
+
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .user-data-custom{
+    font-size: 12px; 
+    width: 90%;
+  }
+}
+
+#custom-user-hover{
+  color:#007bff
+}
+#custom-user-hover:hover{
+  color:rgb(226, 49, 49)
+}
+
+ 

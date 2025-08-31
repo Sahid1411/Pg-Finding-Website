@@ -1,0 +1,89 @@
+.contact-borderRadius{
+    border-radius: 10px;
+    border: none;
+}
+
+form input,textArea{
+    padding: 2px;
+    margin: 5px;
+    border-radius: 5px;
+}   
+
+.contact-heading{
+    font-size: 60px;
+}
+
+.contact-font{
+    font-size: 20px;
+}
+
+.contact-img{
+    height: 300px;
+}
+
+.contact-svg-font{
+    font-size: 50px;
+}
+
+.contact-box-height {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-width{
+    width: 100%;
+}
+
+/* for mobile  */
+@media screen and (max-width: 425px) { 
+    .contact-heading{
+        font-size: 24px;
+    }
+
+    .contact-font{
+        font-size: 11px;
+    }
+
+    .contact-img{
+        height: 130px;
+        width: 150px;
+    }
+
+    .contact-svg-font{
+        font-size: 20px;
+    }
+
+    .contact-box-height {
+        height: 100%;
+        width: 100%;
+    }
+
+    .contact-width{
+        width: 105%;
+    }
+}
+
+/* for tablet  */
+@media screen and (min-width: 425px) and (max-width: 768px) { 
+    .contact-heading{
+        font-size: 40px;
+    }
+
+    .contact-font{
+        font-size: 14px;
+    }
+
+    .contact-img{
+        height: 200px;
+        width: 100%;
+    }
+
+    .contact-svg-font{
+        font-size: 30px;
+    }
+
+    .contact-box-height {
+        height: 70%;
+        width: 100%;
+    }
+}

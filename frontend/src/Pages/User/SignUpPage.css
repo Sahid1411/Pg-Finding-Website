@@ -1,0 +1,18 @@
+.signup-height{
+    height: 100vh;
+} 
+
+/* for mobile  */
+@media screen and (max-width: 425px) { 
+    .signup-height{
+        height: 140vh;
+    }
+
+}
+
+/* for tablet  */
+@media screen and (min-width: 425px) and (max-width: 720px) { 
+    .signup-height{
+        height: 100vh;
+    }
+}
