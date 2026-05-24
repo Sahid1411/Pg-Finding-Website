@@ -150,7 +150,7 @@ Create a `.env` file inside the `server` folder and add:
 ```env
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
-PORT=5000
+PORT=4000
 ```
 
 ---
@@ -178,7 +178,7 @@ npm run dev
 🚀 **Live Project:** Add your deployed project link here
 
 ```bash
-https://your-live-demo-link.com
+https://your-live-demo-link.com](https://pg-finding-website-2nio.vercel.app/
 ```
 
 ---
@@ -229,7 +229,7 @@ This project is licensed under the **MIT License**.
 ### Sahid Ahmed
 
 - 🌐 GitHub: https://github.com/Sahid1411
-- 💼 LinkedIn: Add your LinkedIn profile link here
+- 💼 LinkedIn: https://www.linkedin.com/in/sahid-ahmed-0505822b9/
 
 ---
 
