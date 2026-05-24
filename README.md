@@ -14,7 +14,7 @@ A modern full-stack web application designed for students and working profession
 </div>
 
 ## 🚀 Live Demo
-[Live Demo](https://your-live-demo-link.com](https://pg-finding-website-2nio.vercel.app/)
+[Live Demo](https://pg-finding-website-2nio.vercel.app/)
 
 
 ---
