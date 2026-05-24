@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "./SignUpPage.css"
 import axios from "axios";
 import { toast } from "react-hot-toast";
-  
+import.meta.env.VITE_API_URL;
+
 const LoginPage = () => { 
 
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ const LoginPage = () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/user/login",  
+      `${import.meta.env.VITE_API_URL}/api/user/login`,  
       {
         email, 
         password,

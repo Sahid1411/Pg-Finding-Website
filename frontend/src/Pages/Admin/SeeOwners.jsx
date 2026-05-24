@@ -11,7 +11,7 @@ const SeeOwners = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/owner");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/owner`);
         setOwners(response.data);
       } catch (error) {
         console.log("Error while fetching data", error); 
@@ -22,7 +22,7 @@ const SeeOwners = () => {
 
   const deleteOwner = async (ownerId) => {
     await axios
-      .delete(`http://localhost:4000/api/delete/owner/${ownerId}`)
+      .delete(`${import.meta.env.VITE_API_URL}/api/delete/owner/${ownerId}`)
       .then((response) => {
         setOwners((prevOwners) =>
           prevOwners.filter((owner) => owner._id !== ownerId)

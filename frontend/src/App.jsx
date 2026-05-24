@@ -29,17 +29,7 @@ import UserUpdateProfile from "./Pages/User/UserDashboard/UserUpdateProfile";
 import OwnerProfile from "./Pages/Owner/OwnerProfile";
 import OwnerSeePg from "./Pages/Owner/OwnerSeePg";
 import SeeOwners from "./Pages/Admin/SeeOwners";
-
-// ScrollToTop Component
-const ScrollToTop = () => {
-  const location = useLocation(); 
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]); // Scroll when pathname changes
-
-  return null;
-};
+import ScrollToTop from "./ScrollToTop";
 
 // Layout Wrapper to Include ScrollToTop
 const Layout = ({ children }) => {

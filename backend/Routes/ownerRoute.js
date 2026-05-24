@@ -1,3 +1,4 @@
+// Routes/ownerRoute.js
 import express from "express";
 
 import {
@@ -10,7 +11,8 @@ import {
   deleteOwner,
 } from "../Controllers/ownerController.js";
 
-import fetchOwner from "../Middlewares/fetchAdmin.js";
+// Fixed import path here:
+import fetchOwner from "../Middlewares/fetchOwner.js"; 
 
 const route = express.Router();
 
@@ -23,4 +25,4 @@ route.delete("/delete/owner/:id",deleteOwner);
 
 route.post("/owner/auth/getOwner", fetchOwner, getLoggedInOwnerDetails);
 
-export default route; 
+export default route;

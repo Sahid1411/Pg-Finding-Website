@@ -11,7 +11,7 @@ const SeeUsers = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/users");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users`);
         setUsers(response.data);
       } catch (error) {
         console.log("Error while fetching data", error);  
@@ -22,7 +22,7 @@ const SeeUsers = () => {
 
   const deleteUser = async (userId) => {
     await axios
-      .delete(`http://localhost:4000/api/delete/user/${userId}`)
+      .delete(`${import.meta.env.VITE_API_URL}/api/delete/user/${userId}`)
       .then((response) => {
         setUsers((prevUsers) =>
           prevUsers.filter((user) => user._id !== userId)
@@ -88,12 +88,6 @@ const SeeUsers = () => {
                         <td>{user.gender}  </td>
                         <td>{user.phone} </td>
                         <td>{user.address} </td> 
-                        {/* <td>1</td>
-                        <td>Sahid Ahmed</td>
-                        <td>sahid@gmail.com</td>
-                        <td> male</td>
-                        <td>5566</td>
-                        <td> "Dibrugahr"</td> */}
                         <td>
                           <button
                             onClick={() => deleteUser(user._id)}
@@ -101,9 +95,6 @@ const SeeUsers = () => {
                           >
                             <i className="fa-solid fa-trash"></i>
                           </button>
-                          {/* <button  className="btn btn-danger action-button">
-                            <i className="fa-solid fa-trash"></i>
-                          </button> */}
                         </td>
                       </tr>
                      ))} 

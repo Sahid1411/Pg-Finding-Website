@@ -22,7 +22,7 @@ const UserDashboardRightSide = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/user/${id}` 
+            `${import.meta.env.VITE_API_URL}/api/user/${id}` 
           );
           setUsers(response.data);
         } catch (error) {

@@ -2,7 +2,7 @@ import Admin from "../Models/adminModel.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
-const JWT_SECRET = 'Sahid4@#' ;
+const JWT_SECRET = process.env.JWT_SECRET ;
 
 //ROute 1: create admin, no Login Required
 export const createAdmin = async (req, res) => {

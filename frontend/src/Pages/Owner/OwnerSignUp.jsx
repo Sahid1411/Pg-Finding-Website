@@ -23,7 +23,7 @@ const OwnerSignUp = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/api/owner", owner);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/owner`, owner);
       toast.success(response.data.message, { position: "top-right" });
       navigate("/");
     } catch (error) {

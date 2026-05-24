@@ -23,7 +23,7 @@ const UpdateAdminProfile = () => {
       useEffect(() => {
         const fetchAdmin = async () => {
           try {
-            const response = await axios.get(`http://localhost:4000/api/admin/${id}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/${id}`);
             setAdmin(response.data); 
           } catch (error) {
             console.log("Error fetching user:", error); 
@@ -38,7 +38,7 @@ const UpdateAdminProfile = () => {
     
         try {
           const response = await axios.put(
-            `http://localhost:4000/api/admin/update/${id}`, 
+            `${import.meta.env.VITE_API_URL}/api/admin/update/${id}`, 
             admin,
             {
               headers: {

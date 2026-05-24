@@ -6,6 +6,7 @@ import axios from "axios";
 import { Link, useParams } from 'react-router-dom';
 import "./PgDetails.css";
 import PgCard from './PgCard';
+import.meta.env.VITE_API_URL;
 
 function PgDetailBox(props) { 
   return (
@@ -40,7 +41,7 @@ function PgBox(props) {
         <Link to={`/pgdetails/${props.pg_id}`} style={{ textDecoration: "none" }} className="text-light">
           <img
             className="pg-image border"
-            src={`http://localhost:4000/${props.imgURL.replace(/\\/g, "/")}`} 
+            src={`${import.meta.env.VITE_API_URL}/${props.imgURL.replace(/\\/g, "/")}`} 
             alt="PG"
           />
         </Link>
@@ -71,7 +72,7 @@ const PgDetails = () => {
   useEffect(() => {
     const fetchpg = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/pgs/${pgId}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs/${pgId}`);
         // setPg(response.data);
         setPg(response.data.pgExist);
         // console.log("PG Details:", response.data.pgExist.pg_name);
@@ -87,7 +88,7 @@ const PgDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/pgs");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs`);
         setPgs(response.data.pgData); 
       } catch (error) {
         console.log("Error while fetching data", error);
@@ -119,7 +120,7 @@ const PgDetails = () => {
           <div className="row">
             <div style={{ position: 'relative', padding: '0' }} className="col-12 pgDetailBox-height border">
               <PgDetailBox 
-                image={`http://localhost:4000/${pg.photo?.replace(/\\/g, "/") || ''}`} 
+                image={`${import.meta.env.VITE_API_URL}/${pg.photo?.replace(/\\/g, "/") || ''}`} 
                 name={pg.pg_name || 'Name Not Found'} 
                 address={pg.pg_address || 'Address Not Available'} 
                 price={pg.pg_price_single && pg.pg_price_double ? `₹${pg.pg_price_single} - ₹${pg.pg_price_double}` : 'Price Not Available'} 
@@ -132,7 +133,6 @@ const PgDetails = () => {
 
       {/* Appartment details  */}
 
-      {/* <PgCard pg={samplePgData}/> */}
       {pg.pg_name && (
         <PgCard
           pg={{
@@ -145,7 +145,8 @@ const PgDetails = () => {
             price: {
               single: pg.pg_price_single || "NA", 
               double: pg.pg_price_double || "NA",
-              moreThanTwo: pg.pg_price_more || "NA",
+              // Fixed: mapped to the correct backend schema name
+              moreThanTwo: pg.pg_price_more_than_2 || "NA",
             }
           }}
         /> 

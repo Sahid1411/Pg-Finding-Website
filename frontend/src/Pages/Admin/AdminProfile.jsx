@@ -28,7 +28,7 @@ const AdminProfile = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/admin/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/${id}`);
         setUsers(response.data);
         console.log(response.data);
       } catch (error) {

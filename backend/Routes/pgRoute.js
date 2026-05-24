@@ -70,10 +70,9 @@ route.post("/create/pg", upload.single("photo"), async (req, res) => {
 
 route.get("/pgs", getAllPg);  
 route.get("/pgs/:id", getPgById);
-route.put("/pg/update/:id", upload.single("photos"), updatePg);
+route.put("/pg/update/:id", upload.single("photo"), updatePg);
 route.delete("/delete/pg/:id", deletePg);
 
 route.post("/search",SearchPgByName);
 
 export default route; 
-   

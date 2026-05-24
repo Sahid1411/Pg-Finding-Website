@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useParams } from 'react-router-dom';
 import './AddPg.css';
-
+ 
 const OwnerUpdatePg = () => {
   const { id } = useParams();
   // console.log('ID:', id); // Debugging
@@ -27,7 +27,7 @@ const OwnerUpdatePg = () => {
   useEffect(() => {
     const fetchPg = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/pgs/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs/${id}`);
         // console.log('Response:', res.data); // Should show { pgExist: {...} }
   
         const data = res.data.pgExist; // ✅ Extract actual PG data
@@ -92,12 +92,12 @@ const OwnerUpdatePg = () => {
     
 
     if (pg.photo) {
-      formData.append('photos', pg.photo);
+      formData.append('photo', pg.photo);
     }
     
 
     try { 
-        const response = await axios.put(`http://localhost:4000/api/pg/update/${id}`, 
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/pg/update/${id}`, 
 
         formData,
         {

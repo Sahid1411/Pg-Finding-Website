@@ -2,7 +2,7 @@ import User from "../Models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken"
 
-const JWT_SECRET = 'Sahid4@#' ;  
+const JWT_SECRET = process.env.JWT_SECRET ;  
 
 //ROute 1: create user, no Login Required  
 export const createUser = async (req, res) => {

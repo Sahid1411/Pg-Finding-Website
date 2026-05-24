@@ -1,8 +1,6 @@
 import Pg from "../Models/pgModel.js";
 import mongoose from "mongoose";
 
-
-
 export const getAllPg = async (req, res) => {
   try {
     const {

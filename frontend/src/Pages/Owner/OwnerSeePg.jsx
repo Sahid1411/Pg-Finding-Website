@@ -11,7 +11,7 @@ function OwnerSeePg() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/api/pgs");
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs`);
                 console.log("API Response:", response.data); // Debugging
                 setPg(response.data.pgData || []); // Extract pgData
             } catch (error) {
@@ -24,7 +24,7 @@ function OwnerSeePg() {
 
     const deletePg = async (pgId) => {
         try {
-            const response = await axios.delete(`http://localhost:4000/api/delete/pg/${pgId}`);
+            const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/delete/pg/${pgId}`);
             setPg((prevPg) => prevPg.filter((pg) => pg._id !== pgId));
             toast.success(response.data.message, { position: "top-right" });
         } catch (error) {

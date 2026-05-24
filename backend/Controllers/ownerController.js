@@ -2,13 +2,13 @@ import Owner from "../Models/ownerModel.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
-const JWT_SECRET = 'Sahid4@#' ;  
+const JWT_SECRET = process.env.JWT_SECRET ;  
 
 // Route 1: create owner, no Login Required
 export const createOwner = async (req, res) => {
   try {
     const { name, email, gender, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
 
     // Check in the User collection
     const ownerExist = await Owner.findOne({ email }); 
@@ -20,7 +20,7 @@ export const createOwner = async (req, res) => {
     // Hash the password before storing it
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-    console.log(hashedPassword);
+    // console.log(hashedPassword);
 
     const newOwner = new Owner({
       name,
@@ -31,7 +31,7 @@ export const createOwner = async (req, res) => {
 
     // Sending token with user id
     const data = {
-      user: { 
+      owner: { 
         id: newOwner.id,
       },
     };

@@ -63,7 +63,7 @@ const OwnerAddPg = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/create/pg', 
+        `${import.meta.env.VITE_API_URL}/api/create/pg`, 
         formData,
         {
           headers: {

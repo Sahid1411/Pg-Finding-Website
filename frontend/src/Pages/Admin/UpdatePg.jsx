@@ -33,7 +33,7 @@ const UpdatePg = () => {
   useEffect(() => {
     const fetchPg = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/pgs/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs/${id}`);
         
         const data = res.data.pgExist; // ✅ Extract actual PG data
         // console.log('Response:', data); // Should show { pgExist: {...} }
@@ -94,12 +94,12 @@ const UpdatePg = () => {
 
 
     if (pg.photo) {
-      formData.append('photos', pg.photo); 
+      formData.append('photo', pg.photo); 
     }
     
 
     try {
-        const response = await axios.put(`http://localhost:4000/api/pg/update/${id}`, 
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/pg/update/${id}`, 
 
         formData,
         {

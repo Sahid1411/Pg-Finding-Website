@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography,Slider , MenuItem, Select, Switch } from "@mui/material";
 import axios from "axios";
+import.meta.env.VITE_API_URL;
 
 const PGSidebar = ({ setPgs }) => {
   const [price, setPrice] = React.useState([3000, 64000]);
@@ -35,7 +36,7 @@ const PGSidebar = ({ setPgs }) => {
     setSelectedAmenities([]);
     
     try {
-      const response = await axios.get("http://localhost:4000/api/pgs");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs`);
       setPgs(response.data.pgData);
     } catch (error) {
       console.log("Error clearing filters", error);
@@ -74,7 +75,7 @@ const PGSidebar = ({ setPgs }) => {
         params.amenities = JSON.stringify(selectedAmenities);
       }
   
-      const response = await axios.get("http://localhost:4000/api/pgs", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs`, {
         params
       });
   

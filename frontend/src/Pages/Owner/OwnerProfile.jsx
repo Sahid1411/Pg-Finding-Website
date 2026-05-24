@@ -28,7 +28,7 @@ const OwnerProfile = () => {
 
     const fetchData = async () => {  
       try {
-        const response = await axios.get(`http://localhost:4000/api/owner/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/owner/${id}`);
         setUsers(response.data);
         console.log(response.data);
       } catch (error) {

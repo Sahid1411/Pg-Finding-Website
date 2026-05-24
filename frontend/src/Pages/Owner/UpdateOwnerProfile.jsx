@@ -24,7 +24,7 @@ const UpdateOwnerProfile = () => {
   useEffect(() => {    
     const fetchOwner = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/owner/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/owner/${id}`);
         setOwner(response.data);
       } catch (error) {
         console.log("Error fetching owner:", error);
@@ -39,7 +39,7 @@ const UpdateOwnerProfile = () => {
 
     try {
       const response =  await axios.put(
-        `http://localhost:4000/api/owner/update/${id}`, 
+        `${import.meta.env.VITE_API_URL}/api/owner/update/${id}`, 
         owner,
         {
           headers: {

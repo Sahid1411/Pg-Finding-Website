@@ -5,6 +5,7 @@ import { Drawer, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/MenuOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
+import.meta.env.VITE_API_URL;
 
 const Pg = () => { 
   const [open, setOpen] = useState(false); 
@@ -13,7 +14,7 @@ const Pg = () => {
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/pgs");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pgs`);
         setPgs(response.data.pgData);
       } catch (error) {
         console.log("Initial fetch error", error);

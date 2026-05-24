@@ -6,7 +6,7 @@ import "./Navbar.css";
 import profile from "../../assets/svg folder/profile-user.svg"; 
 import axios from "axios";
 import NewNavbar from "./NewNavbar";
-
+import.meta.env.VITE_API_URL;
 
   
 function Navbar(){
@@ -31,7 +31,7 @@ function Navbar(){
     setError("");    
   
     try {
-      const response = await axios.post("http://localhost:4000/api/search", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/search`, {
         pg_name: pgName.trim()
       });
       

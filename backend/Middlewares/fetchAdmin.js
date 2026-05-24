@@ -1,6 +1,6 @@
+// Middlewares/fetchAdmin.js
 import jwt from "jsonwebtoken";
-const JWT_SECRET = 'Sahid4@#' ;
-
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const fetchAdmin = (req, res, next) => {
     const token = req.header('auth-token');
@@ -11,11 +11,10 @@ const fetchAdmin = (req, res, next) => {
     try {
         console.log("Received Token:", token);
         const data = jwt.verify(token, JWT_SECRET);
-        console.log("Decoded Data:", data); // Debugging log
-
-        req.admin = data.admin || data.user; // Fix: Handle `admin` or `user`
+        
+        req.admin = data.admin; 
         if (!req.admin) {
-            return res.status(401).json({ error: "Invalid token structure" });
+            return res.status(401).json({ error: "Invalid token structure for admin" });
         }
 
         next();
@@ -24,5 +23,4 @@ const fetchAdmin = (req, res, next) => {
     }
 };
 
-
-export default fetchAdmin
+export default fetchAdmin;

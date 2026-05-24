@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Pg.css";
 import { Link } from "react-router-dom";
+import.meta.env.VITE_API_URL;
 
 function PgBox(props) {
   return (  
@@ -15,7 +16,7 @@ function PgBox(props) {
         <Link style={{ textDecoration: "none" }} className="text-light" to={`/pgdetails/${props.pg_id}`}>
         <img
           className="pg-image border"  
-          src={`http://localhost:4000/${props.imgURL.replace(/\\/g, "/")}`}  
+          src={`${import.meta.env.VITE_API_URL}/${props.imgURL.replace(/\\/g, "/")}`}  
           alt="image"  
         />
         </Link>  
