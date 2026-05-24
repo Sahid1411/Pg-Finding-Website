@@ -13,6 +13,11 @@ A modern full-stack web application designed for students and working profession
 
 </div>
 
+## 🚀 Live Demo
+[Live Demo](https://your-live-demo-link.com](https://pg-finding-website-2nio.vercel.app/)
+# 🌐 Live Demo
+
+
 ---
 
 ## 📌 Overview
@@ -173,15 +178,6 @@ npm run dev
 
 ---
 
-# 🌐 Live Demo
-
-🚀 **Live Project:** Add your deployed project link here
-
-```bash
-https://your-live-demo-link.com](https://pg-finding-website-2nio.vercel.app/
-```
-
----
 
 # 📸 Screenshots
 
